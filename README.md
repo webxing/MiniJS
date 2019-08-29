@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+<!--
+ * @Descripttion: MiniJS
+ * @version: v1.0.0
+ * @Author: Liuxin   微信: L2315496341 欢迎交流
+ * @Date: 2019-08-28 16:18:43
+ * @LastEditors: Liuxin
+ * @LastEditTime: 2019-08-29 16:05:49
+ -->
+# MiniJS
+用简短的js代码解决一些问题
 
-You can use the [editor on GitHub](https://github.com/webxing/MiniJS/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+<!-- **Tips:**
+为了便于直观展示结果，项目内所有demo是基于vue写的。
+此项目只是**为了说明问题、提供实现思路**，重点在于methods本身，不必过于在意用了什么框架。 -->
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Demo
 
-### Markdown
+🚀 1_30秒的编程_日期 【[效果](https://webxing.github.io/MiniCSS/1_30秒的编程_日期.html) \| [代码](https://github.com/webxing/MiniCSS/blob/master/1_30秒的编程_日期.html)】
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+<!-- 🚀🏷🔖🧶🧵🕸🦋🌈💧🎗💎🎈🎀📬💌🔹 -->
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/webxing/MiniJS/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

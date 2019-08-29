@@ -1,0 +1,116 @@
+<!--
+ * @Descripttion: 1_30秒的编程_日期
+ * @version: v1.0.0
+ * @Author: Liuxin   微信: L2315496341 欢迎交流
+ * @Date: 2019-08-29 14:37:33
+ * @LastEditors: Liuxin
+ * @LastEditTime: 2019-08-29 16:05:13
+
+【keyPoint】:
+    以日期为核心
+    函数简短精炼 30s内可以完成
+【note】:
+    Date对象文档：http://javascript.ruanyifeng.com/stdlib/date.html
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1_30秒的编程_日期</title>
+</head>
+
+<script>
+  /**
+   * @name: dayOfYear
+   * @test: dayOfYear(new Date())
+   * @msg: 计算传入值是当前年的第几天
+   * @param {Date}  date  [时间对象]
+   * @return: Number
+   * @keyPonit: 日期设为0，就代表上个月的最后一天 
+   *            new Date(2019, 0, 0)  ===>  2019年1月的上一个月的最后一天 即 2018年12月31号 [Mon Dec 31 2018 00:00:00 GMT+0800 (中国标准时间)]
+   */
+  const dayOfYear = date => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+  document.write(`【 dayOfYear 】 今天是${new Date().getFullYear()}年的第 ${dayOfYear(new Date())} 天<br /><br />`)
+
+
+  /**
+   * @name: formatDuration
+   * @test: formatDuration(34325055574)
+   * @msg: 由时间戳计算出对应的 day hour minute second millisecond
+   * @param {Number}  ms  [时间戳]
+   * @return: String
+   * @keyPonit: 
+   */  
+  const formatDuration = ms => {
+    if (ms < 0) ms = -ms;
+    const time = {
+      day: Math.floor(ms / 86400000),
+      hour: Math.floor(ms / 3600000) % 24,
+      minute: Math.floor(ms / 60000) % 60,
+      second: Math.floor(ms / 1000) % 60,
+      millisecond: Math.floor(ms) % 1000
+    };
+
+    return Object.entries(time)
+      .filter(val => val[1] !== 0)
+      .map(([key, val]) => `${val} ${key}${val !== 1 ? 's' : ''}`)
+      .join(', ');
+  };
+  document.write(`【 formatDuration 】 此刻的计算结果是 ${formatDuration(+new Date())}<br /><br />`)
+
+
+  /**
+   * @name: getColonTimeFromDate
+   * @test: getColonTimeFromDate(new Date())
+   * @msg: 从Date对象获取 HH:MM:SS
+   * @param {Date}  date  [时间对象]
+   * @return: 
+   * @keyPonit: toTimeString方法返回时间字符串（不含年月日）
+   *            new Date().toTimeString()  ===>  15:43:02 GMT+0800 (中国标准时间)
+   * 
+   *            toDateString方法返回日期字符串（不含小时、分和秒）
+   *            new Date().toDateString() // "Thu Aug 29 2019"
+   */  
+  const getColonTimeFromDate = date => date.toTimeString().slice(0, 8);
+  document.write(`【 getColonTimeFromDate 】 获取 HH:MM:SS的结果是 ${getColonTimeFromDate(new Date())}<br /><br />`)
+
+
+  /**
+   * @name: getDaysDiffBetweenDates
+   * @test: getDaysDiffBetweenDates(new Date('2019-1-1'), new Date('2019-1-20'))
+   * @msg: 返回两个日期之间的差异（以天为单位）
+   * @param {Date}   dateInitial    [时间对象 对比的基点]
+   * @param {Date}   dateFinal    [时间对象]
+   * @return: 
+   * @keyPonit: 
+   */  
+   const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
+   document.write(`【 getDaysDiffBetweenDates 】 2019-1-1 与 2019-1-20 相差 ${getDaysDiffBetweenDates(new Date('2019-1-1'), new Date('2019-1-20'))} 天<br /><br />`)
+
+
+  /**
+   * @name: getMeridiemSuffixOfInteger
+   * @test: getMeridiemSuffixOfInteger(13)
+   * @msg: 24小时制转化成12小时制(am, pm后缀)
+   * @param {Number}  num   [24小时制的时间]
+   * @return: 
+   * @keyPonit: 
+   */
+  const getMeridiemSuffixOfInteger = num =>
+    num === 0 || num === 24
+    ? 12 + 'am'
+    : num === 12
+      ? 12 + 'pm'
+      : num < 12
+        ? (num % 12) + 'am'
+        : (num % 12) + 'pm';
+  document.write(`【 getMeridiemSuffixOfInteger 】 24小时制的13点转化为12小时制为 ${getMeridiemSuffixOfInteger(13)}<br /><br />`)
+  
+</script>
+
+<body>
+</body>
+</html>
